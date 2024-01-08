@@ -1,0 +1,44 @@
+[
+  {
+    "name": "incap_ses_374_2829260",
+    "value": "VQdDZ14VChJpZOnpILgwBacbm2UAAAAAv3UKFp0b80AAns8DNl1t5A==",
+    "domain": "www.rdv-prefecture.interieur.gouv.fr",
+    "path": "/",
+    "expires": -1,
+    "size": 77,
+    "httpOnly": false,
+    "secure": false,
+    "session": true,
+    "sameParty": false,
+    "sourceScheme": "Secure",
+    "sourcePort": 443
+  },
+  {
+    "name": "visid_incap_2829260",
+    "value": "N5sSnvpTTzGNf3DGHVtZe6cbm2UAAAAAQUIPAAAAAAAzbffeCBchxz686i7XPBTZ",
+    "domain": "www.rdv-prefecture.interieur.gouv.fr",
+    "path": "/",
+    "expires": 1736115775.667406,
+    "size": 83,
+    "httpOnly": true,
+    "secure": false,
+    "session": false,
+    "sameParty": false,
+    "sourceScheme": "Secure",
+    "sourcePort": 443
+  },
+  {
+    "name": "nlbi_2829260",
+    "value": "ZnBMIVRqtG0Un2aWtoY1JQAAAAAIf28nxqyFzrQZdiWRQ5GZ",
+    "domain": "www.rdv-prefecture.interieur.gouv.fr",
+    "path": "/",
+    "expires": -1,
+    "size": 60,
+    "httpOnly": false,
+    "secure": false,
+    "session": true,
+    "sameParty": false,
+    "sourceScheme": "Secure",
+    "sourcePort": 443
+  }
+]
