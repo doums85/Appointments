@@ -23,8 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(createBrowser, goToURL);
 app.use(checkRecaptchaPresence, downloadImageRecaptcha, resolveRecaptcha);
-app.use(scrapeAppointment);
 
-app.get('/api/v1/', scrapeAppointment); 
+app.get('/api/v1/', scrapeAppointment);
 
 module.exports = app;
