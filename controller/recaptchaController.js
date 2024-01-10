@@ -59,11 +59,11 @@ exports.resolveRecaptcha = function (req, res, next) {
         await page.type('#captchaFormulaireExtInput', response.code);
         await new Promise((resolve) => setTimeout(resolve, 100));
         await page.click('button[type=submit]');
-        const cookies = await page.cookies();
+       // const cookies = await page.cookies();
 
         // Save cookies to file json
        // fs.writeFileSync(`${__dirname}/../public/cookies.json`, JSON.stringify(cookies));
-        console.log('cookies saved');
+        console.log('Recaptcha resolved successfully ! 🚀');
         next();
       });
     } else {

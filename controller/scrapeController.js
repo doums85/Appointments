@@ -5,7 +5,7 @@ require('dotenv').config();
 const NO_APPOINTMENT = 'No appointment available from this date. Please try again later.';
 
 // Define the main function to scrape data from a URL
-async function scrapeDataFromUrl(req, res, next) {
+async function scrapeAppointment(req, res, next) {
   // Get the page from the request
   const page = req.page;
 
@@ -56,4 +56,4 @@ async function scrapeDataFromUrl(req, res, next) {
 }
 
 // Export the function
-module.exports = scrapeDataFromUrl;
+module.exports = scrapeAppointment;

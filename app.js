@@ -25,8 +25,6 @@ app.use(createBrowser, goToURL);
 app.use(checkRecaptchaPresence, downloadImageRecaptcha, resolveRecaptcha);
 app.use(scrapeAppointment);
 
-app.get('/api/v1/', (req, res) => {
-  res.send('Hello World!');
-}); 
+app.get('/api/v1/', scrapeAppointment); 
 
 module.exports = app;

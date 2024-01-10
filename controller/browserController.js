@@ -1,17 +1,10 @@
 const proxyChain = require('proxy-chain');
+const puppeteer = require('puppeteer');
 // Load environment variables
 require('dotenv').config();
-let chrome = {};
-let puppeteer;
-let browser;
-let options;
 
-if (process.env.AWS_LAMBDA_FUNCTION_VERSION) {
-  chrome = require('chrome-aws-lambda');
-  puppeteer = require('puppeteer-core');
-} else {
-  puppeteer = require('puppeteer');
-}
+let browser;
+
 
 exports.createBrowser = async function (req, res, next) {
   try {
@@ -23,21 +16,9 @@ exports.createBrowser = async function (req, res, next) {
       // Prints something like "http://127.0.0.1:45678"
       console.log(newProxyUrl);
 
-      if (process.env.AWS_LAMBDA_FUNCTION_VERSION) {
-        options = {
-          args: [...chrome.args, '--hide-scrollbars', '--disable-web-security', `--proxy-server=${newProxyUrl}`],
-          defaultViewport: chrome.defaultViewport,
-          executablePath: await chrome.executablePath,
-          headless: true,
-          ignoreHTTPSErrors: true,
-        };
-      } else {
-        options = {
-          args: [`--proxy-server=${newProxyUrl}`],
-        };
-      }
-
-      browser = await puppeteer.launch(options);
+      browser = await puppeteer.launch({
+        args: [`--proxy-server=${newProxyUrl}`],
+      });
 
       console.log('Browser created');
     }
